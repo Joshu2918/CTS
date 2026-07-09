@@ -1,14 +1,30 @@
-# Upskilling Path
+# Upskilling
 
-This directory contains my coursework, exercises, notes, and projects completed during the **Upskilling** program.
+## Cognizant Digital Nurture 5.0 — Upskilling Journey
 
-## Modules Covered
+This repository contains my learning journey and hands-on practice completed as part of Cognizant Digital Nurture 5.0.
 
-1. **[ADONET](./ADONET)**: Database connection, queries, and data management in .NET.
-2. **[Bootstrap5](./Bootstrap5)**: Modern responsive frontend design and UI frameworks.
-3. **[CSS3](./CSS3)**: CSS advanced concepts, styling, and design.
-4. **[CSharp](./CSharp)**: C# fundamentals, OOP, collections, and backend logic.
-5. **[HTML5](./HTML5)**: Semantic web markup, exercises, and my Resume project.
-6. **[JavaScript](./JavaScript)**: ES6+, DOM manipulation, and dynamic client-side scripting.
-7. **[SQL](./SQL)**: Relational databases, SQL queries, DDL, DML, and table structures.
-8. **[jQuery](./jQuery)**: DOM querying, events, and animations simplified.
+## Skills Covered
+
+- [HTML5](./HTML5)
+- [CSS3](./CSS3)
+- [JavaScript](./JavaScript)
+- [Bootstrap 5](./Bootstrap5)
+- [jQuery](./jQuery)
+- [ANSI SQL using MySQL](./SQL)
+- [C#](./CSharp)
+- [ADO.NET](./ADONET)
+
+## Learning Outcomes
+
+- Developed responsive web pages
+- Built interactive web applications using JavaScript and jQuery
+- Designed and queried relational databases using MySQL
+- Learned object-oriented programming using C#
+- Implemented database connectivity using ADO.NET
+- Practiced coding exercises and mini-projects
+
+## Status
+
+- ✅ Completed learning modules
+- 🚀 Continuously adding exercises and projects

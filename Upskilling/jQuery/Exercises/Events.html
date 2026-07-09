@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button id="eventButton" type="button">Click Me</button>
+    <p id="message" aria-live="polite"></p>
+
+    <script>
+        $("#eventButton").on("click", function () {
+            $("#message").text("Button Clicked!");
+        });
+    </script>
+</body>
+</html>

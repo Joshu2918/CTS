@@ -1,0 +1,26 @@
+class Logger {
+    private Logger() {
+    }
+
+    private static class InstanceHolder {
+        private static final Logger INSTANCE = new Logger();
+    }
+
+    static Logger getInstance() {
+        return InstanceHolder.INSTANCE;
+    }
+
+    void log(String message) {
+        System.out.println("LOG: " + message);
+    }
+}
+
+public class SingletonDemo {
+    public static void main(String[] args) {
+        Logger logger1 = Logger.getInstance();
+        Logger logger2 = Logger.getInstance();
+
+        logger1.log("Application Started");
+        System.out.println(logger1 == logger2);
+    }
+}

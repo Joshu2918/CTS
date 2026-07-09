@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays</title>
+</head>
+<body>
+    <h1>Skills Array</h1>
+    <ul id="skillList"></ul>
+
+    <script>
+        const skills = ["HTML", "CSS", "JavaScript", "C#"];
+        const skillList = document.getElementById("skillList");
+
+        skills.forEach(function (skill) {
+            const item = document.createElement("li");
+            item.textContent = skill;
+            skillList.appendChild(item);
+        });
+    </script>
+</body>
+</html>
