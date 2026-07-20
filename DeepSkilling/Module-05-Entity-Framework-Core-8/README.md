@@ -1,13 +1,16 @@
-# Module 05 — Entity Framework Core 8
+# Module 5 - Entity Framework Core 8.0
 
-## Topics
+## Overview
 
-- Entity models and `DbContext`
-- Migrations
-- Relationships
-- CRUD operations
-- LINQ queries
+Entity Framework Core (EF Core) is Microsoft's modern Object Relational Mapping (ORM) framework for .NET applications. It allows developers to work with databases using C# objects instead of writing large amounts of SQL code.
 
-## Structure
+## Topics Covered
 
-Hands-on exercises and notes for this module will be added here.
+* What is ORM?
+* EF Core vs Entity Framework
+* EF Core 8 and .NET 8 Integration
+* New Features in EF Core 8
+
+## Learning Outcome
+
+Understand the fundamentals of Entity Framework Core and how it simplifies database access in .NET applications.
