@@ -74,5 +74,5 @@ Module-14-GenAI-Fundamentals
 
 
 
-Chaitanya Vardhan
+K.Joshit Simha
 
