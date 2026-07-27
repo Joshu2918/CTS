@@ -1,0 +1,30 @@
+.container{
+    width:80%;
+    margin:auto;
+    margin-top:40px;
+}
+
+h1{
+    text-align:center;
+    color:#0d6efd;
+}
+
+button{
+    padding:10px 20px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background-color:#0d6efd;
+    color:white;
+}
