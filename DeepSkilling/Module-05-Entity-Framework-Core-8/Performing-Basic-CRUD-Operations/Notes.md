@@ -26,7 +26,7 @@ Example:
 ```csharp
 var student = new Student
 {
-    Name = "Pramod"
+    Name = "K.Joshit Simha"
 };
 
 await context.Students.AddAsync(student);

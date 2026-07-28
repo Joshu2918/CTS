@@ -34,7 +34,7 @@ namespace WebApiDemo.Controllers
                 new Employee
                 {
                     Id = 1,
-                    Name = "Pramod",
+                    Name = "K.Joshit Simha",
                     Salary = 50000,
                     Permanent = true,
                     DateOfBirth = new DateTime(2003,5,16)

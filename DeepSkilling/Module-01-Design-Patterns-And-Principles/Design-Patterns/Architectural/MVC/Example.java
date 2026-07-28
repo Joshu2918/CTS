@@ -32,7 +32,7 @@ class StudentController {
 
 class MVCDemo {
     public static void main(String[] args) {
-        Student model = new Student("Pramod");
+        Student model = new Student("K.Joshit Simha");
         StudentView view = new StudentView();
         StudentController controller = new StudentController(model, view);
 

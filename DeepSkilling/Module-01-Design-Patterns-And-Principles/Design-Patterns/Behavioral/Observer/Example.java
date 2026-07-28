@@ -42,7 +42,7 @@ class ObserverDemo {
     public static void main(String[] args) {
         Channel channel = new Channel();
 
-        channel.subscribe(new User("Pramod"));
+        channel.subscribe(new User("K.Joshit Simha"));
         channel.subscribe(new User("Rahul"));
 
         channel.uploadVideo("Design Patterns Tutorial");

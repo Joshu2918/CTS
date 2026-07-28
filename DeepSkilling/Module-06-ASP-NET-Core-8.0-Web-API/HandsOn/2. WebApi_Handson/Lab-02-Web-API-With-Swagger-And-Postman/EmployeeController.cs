@@ -16,7 +16,7 @@ namespace SwaggerDemo.Controllers
                 new
                 {
                     Id = 1,
-                    Name = "Pramod",
+                    Name = "K.Joshit Simha",
                     Department = "IT"
                 },
                 new

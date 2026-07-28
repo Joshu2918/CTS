@@ -16,7 +16,7 @@ namespace EFCoreDemo
             Student student = new Student();
 
             student.StudentId = 101;
-            student.Name = "Pramod";
+            student.Name = "K.Joshit Simha";
 
             Console.WriteLine(
                 $"ID: {student.StudentId}, Name: {student.Name}");

@@ -44,7 +44,7 @@ class StudentRepository {
 
 class SRPDemo {
     public static void main(String[] args) {
-        Student student = new Student("Pramod", 88);
+        Student student = new Student("K.Joshit Simha", 88);
         GradeCalculator calculator = new GradeCalculator();
         StudentRepository repository = new StudentRepository();
 

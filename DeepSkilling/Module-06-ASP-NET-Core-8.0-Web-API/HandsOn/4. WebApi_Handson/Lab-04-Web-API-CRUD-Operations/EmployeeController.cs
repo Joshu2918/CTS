@@ -8,7 +8,7 @@ namespace CrudApiDemo.Controllers
     {
         private static List<Employee> employees = new List<Employee>()
         {
-            new Employee{Id=1,Name="Pramod",Salary=50000},
+            new Employee{Id=1,Name="K.Joshit Simha",Salary=50000},
             new Employee{Id=2,Name="Rahul",Salary=45000},
             new Employee{Id=3,Name="Kiran",Salary=40000}
         };
