@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.stats div {
+  border: 1px solid #ccc;
+  padding: 20px 40px;
+  text-align: center;
+}
