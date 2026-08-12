@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Client-side form validation using jQuery.">
+    <title>jQuery Form Validation</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f3f6fb;
+            color: #1f2937;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 4rem 1rem;
+        }
+
+        form {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 16px 40px rgba(31, 41, 55, 0.12);
+            margin: 0 auto;
+            max-width: 440px;
+            padding: 2rem;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        input {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font: inherit;
+            margin-top: 0.4rem;
+            padding: 0.75rem;
+            width: 100%;
+        }
+
+        input.invalid {
+            border-color: #dc2626;
+        }
+
+        button {
+            background: #3157d5;
+            border: 0;
+            border-radius: 8px;
+            color: #ffffff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+            margin-top: 1.25rem;
+            padding: 0.8rem 1rem;
+            width: 100%;
+        }
+
+        #message {
+            min-height: 1.5rem;
+        }
+
+        .error {
+            color: #b91c1c;
+        }
+
+        .success {
+            color: #047857;
+        }
+    </style>
+</head>
+<body>
+    <form id="registrationForm" novalidate>
+        <h1>Registration Form</h1>
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email">
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password">
+
+        <button type="submit">Submit</button>
+        <p id="message" aria-live="polite"></p>
+    </form>
+
+    <script>
+        $("#registrationForm").on("submit", function (event) {
+            event.preventDefault();
+
+            const name = $("#name").val().trim();
+            const email = $("#email").val().trim();
+            const password = $("#password").val();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            $("input").removeClass("invalid");
+            $("#message").removeClass("error success");
+
+            if (!name) {
+                $("#name").addClass("invalid").trigger("focus");
+                $("#message").addClass("error").text("Name is required.");
+            } else if (!emailPattern.test(email)) {
+                $("#email").addClass("invalid").trigger("focus");
+                $("#message").addClass("error").text("Enter a valid email address.");
+            } else if (password.length < 6) {
+                $("#password").addClass("invalid").trigger("focus");
+                $("#message").addClass("error").text("Password must contain at least 6 characters.");
+            } else {
+                $("#message").addClass("success").text("Form submitted successfully!");
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>

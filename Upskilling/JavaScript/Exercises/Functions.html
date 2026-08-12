@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    <button id="greetButton" type="button">Show Greeting</button>
+    <p id="message" aria-live="polite"></p>
+
+    <script>
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+
+        document.getElementById("greetButton").addEventListener("click", function () {
+            document.getElementById("message").textContent = greet("Pramod");
+        });
+    </script>
+</body>
+</html>

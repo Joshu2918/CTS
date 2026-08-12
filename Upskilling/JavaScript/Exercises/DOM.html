@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1 id="heading">DOM Example</h1>
+    <button id="changeButton" type="button">Change Text</button>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const button = document.getElementById("changeButton");
+
+        button.addEventListener("click", function () {
+            heading.textContent = "The DOM was updated!";
+            heading.style.color = "royalblue";
+        });
+    </script>
+</body>
+</html>

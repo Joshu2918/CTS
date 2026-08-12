@@ -1,0 +1,21 @@
+Git Module Practice
+
+This file is used for practicing Git concepts in Module 10.
+
+Topics Covered:
+- Git status
+- Git add
+- Git commit
+- Git branch
+- Git checkout
+- Git merge
+- Git pull
+- Git push
+
+This file will be modified throughout the hands-on exercises to demonstrate version control and change tracking.
+
+Feature Branch Update
+
+This line was added while working in the feature/module10 branch.
+
+Practiced creating and modifying files inside a Git feature branch.
