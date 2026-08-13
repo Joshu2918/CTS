@@ -48,3 +48,12 @@ button {
   padding: 8px 15px;
   cursor: pointer;
 }
+.enroll-button {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid #888;
+  border-radius: 4px;
+}

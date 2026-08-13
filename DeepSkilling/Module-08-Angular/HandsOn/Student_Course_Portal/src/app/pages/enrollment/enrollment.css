@@ -1,0 +1,51 @@
+h1 {
+  text-align: center;
+  margin-top: 35px;
+}
+
+form {
+  width: 450px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+small {
+  display: block;
+  margin-top: 5px;
+  color: red;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.success {
+  width: 450px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid green;
+}

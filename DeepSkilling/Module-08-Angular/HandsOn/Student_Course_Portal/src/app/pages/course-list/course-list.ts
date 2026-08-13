@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { CourseLevelPipe } from '../../shared/course-level-pipe';
 import { HighlightDirective } from '../../shared/highlight';
 
@@ -7,6 +8,7 @@ import { HighlightDirective } from '../../shared/highlight';
   selector: 'app-course-list',
   imports: [
     CommonModule,
+    RouterLink,
     CourseLevelPipe,
     HighlightDirective
   ],
