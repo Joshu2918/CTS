@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.courses {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.course-card {
+  width: 220px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.course-card button {
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.course-card button:disabled {
+  cursor: default;
+}

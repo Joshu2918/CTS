@@ -1,0 +1,33 @@
+<h1>Available Courses</h1>
+
+<div class="courses">
+
+  @for (course of courses; track course.id) {
+
+    <div class="course-card">
+
+      <h2>{{ course.name }}</h2>
+
+      <p>Duration: {{ course.duration }}</p>
+
+      <p>Level: {{ course.level }}</p>
+
+      @if (course.enrolled) {
+
+        <button disabled>
+          Enrolled
+        </button>
+
+      } @else {
+
+        <button (click)="enroll(course)">
+          Enroll
+        </button>
+
+      }
+
+    </div>
+
+  }
+
+</div>
