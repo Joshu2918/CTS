@@ -1,1 +1,53 @@
-<p>course-list works!</p>
+<h1>Course Listing</h1>
+
+<p class="description">
+  Browse the available courses and explore their details.
+</p>
+
+<div class="course-container">
+
+  <div
+    class="course-card"
+    *ngFor="let course of courses"
+    appHighlight>
+
+    <h2>{{ course.name }}</h2>
+
+    <p>
+      <strong>Instructor:</strong>
+      {{ course.instructor }}
+    </p>
+
+    <p>
+      <strong>Duration:</strong>
+      {{ course.duration }} months
+    </p>
+
+    <p>
+      <strong>Level:</strong>
+      {{ course.level | courseLevel }}
+    </p>
+
+    <div *ngIf="course.available; else unavailable">
+
+      <span class="available">
+        Available
+      </span>
+
+      <button>
+        Enroll Now
+      </button>
+
+    </div>
+
+    <ng-template #unavailable>
+
+      <span class="unavailable">
+        Currently Unavailable
+      </span>
+
+    </ng-template>
+
+  </div>
+
+</div>

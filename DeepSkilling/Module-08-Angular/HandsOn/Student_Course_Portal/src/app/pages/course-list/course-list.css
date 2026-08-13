@@ -1,0 +1,50 @@
+h1 {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.course-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.course-card {
+  width: 260px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.course-card h2 {
+  margin-top: 0;
+}
+
+.course-card p {
+  margin: 10px 0;
+}
+
+.available {
+  display: inline-block;
+  margin-right: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+.unavailable {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
