@@ -1,0 +1,5 @@
+@if (notificationService.message$ | async; as message) {
+  @if (message) {
+    <div class="notification">{{ message }}</div>
+  }
+}

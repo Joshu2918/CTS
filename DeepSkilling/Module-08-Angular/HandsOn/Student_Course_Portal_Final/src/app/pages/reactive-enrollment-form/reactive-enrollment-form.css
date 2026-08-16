@@ -1,0 +1,401 @@
+section.reactive-form {
+  padding: 40px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8f9ff, #ffffff);
+  min-height: calc(100vh - 64px); /* Accounting for header */
+}
+
+section.reactive-form::before {
+  content: '';
+  position: absolute;
+  top: 64px; /* Header height */
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+section.reactive-form h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  color: #0d6efd;
+  text-align: center;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+section.reactive-form h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #ffd700);
+  border-radius: 2px;
+}
+
+form {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0d6efd, #6610f2);
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #212529;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field label::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #0d6efd;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background: #f8f9ff;
+}
+
+.field input[type="checkbox"] {
+  width: auto;
+  margin-top: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 111, 253, 0.2);
+  background: white;
+}
+
+span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #dc3545;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+span::before {
+  content: '⚠';
+  font-size: 1.1rem;
+}
+
+h3 {
+  margin-top: 28px;
+  margin-bottom: 20px;
+  color: #212529;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h3::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0d6efd;
+}
+
+#additionalCourses {
+  border-top: 2px solid #e9ecef;
+  padding-top: 28px;
+  margin-top: 24px;
+}
+
+#additionalCourses .field {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#additionalCourses input {
+  flex: 1;
+  padding: 16px 20px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  background: #f8f9ff;
+  transition: all 0.3s ease;
+}
+
+#additionalCourses input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 111, 253, 0.2);
+  background: white;
+}
+
+#additionalCourses button {
+  padding: 12px 20px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+#additionalCourses button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+  background: #c82333;
+}
+
+#additionalCourses button:active {
+  transform: translateY(0);
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-group button {
+  padding: 16px 28px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  min-width: 140px;
+}
+
+.button-group button[type="submit"] {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: white;
+}
+
+.button-group button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13, 111, 253, 0.4);
+  background: linear-gradient(135deg, #0b5ed7, #5a2e83);
+}
+
+.button-group button[type="submit"]:active {
+  transform: translateY(-1px);
+}
+
+.button-group button[type="submit"]:disabled {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+.button-group button[type="button"] {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: white;
+}
+
+.button-group button[type="button"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(108, 117, 125, 0.3);
+  background: linear-gradient(135deg, #5a6268, #495057);
+}
+
+.button-group button[type="button"]:active {
+  transform: translateY(-1px);
+}
+
+.button-group button[type="button"]:last-child {
+  /* Add Course button */
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+}
+
+.button-group button[type="button"]:last-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+  background: linear-gradient(135deg, #218838, #1e7e34);
+}
+
+.button-group button[type="button"]:last-child:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  section.reactive-form {
+    padding: 24px 16px;
+  }
+
+  form {
+    padding: 24px;
+  }
+
+  .field label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .field input,
+  .field select {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  #additionalCourses .field {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  #additionalCourses input {
+    padding: 14px 16px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .button-group button:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Add subtle animation */
+form {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhance select styling */
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px;
+  padding-right: 40px;
+}
+
+.field select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230d6efd' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/svg%3E");
+}
+
+/* Enhance checkbox styling */
+.field input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ced4da;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.field input[type="checkbox"]:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.field input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.field input[type="checkbox"]:hover {
+  border-color: #0d6efd;
+}
+
+/* Enhance select dropdown arrow on hover */
+.field select:hover {
+  border-color: #0d6efd;
+}

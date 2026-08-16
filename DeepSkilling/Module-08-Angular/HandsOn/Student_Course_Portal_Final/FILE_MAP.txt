@@ -1,0 +1,81 @@
+STUDENT COURSE PORTAL — FINAL HANDS-ON 1-10 FILE MAP
+
+This is ONE cumulative Angular project, matching the exercise book.
+
+HANDS-ON 1-2
+- src/app/app.ts
+- src/app/app.html
+- src/app/app.css
+- src/app/app.config.ts
+- src/app/app.routes.ts
+- src/app/components/header/*
+- src/app/pages/home/*
+- src/app/components/course-card/*
+
+HANDS-ON 3
+- src/app/pages/course-list/*
+- src/app/directives/highlight.ts
+- src/app/directives/highlight.spec.ts
+- src/app/pipes/credit-label-pipe.ts
+- src/app/pipes/credit-label-pipe.spec.ts
+
+HANDS-ON 4
+- src/app/pages/enrollment-form/*
+
+HANDS-ON 5
+- src/app/pages/reactive-enrollment-form/*
+
+HANDS-ON 6
+- src/app/models/course.model.ts
+- src/app/services/course.ts
+- src/app/services/enrollment.ts
+- src/app/services/auth.ts
+- src/app/services/notification.ts
+- src/app/services/loading.ts
+- src/app/components/course-summary-widget/*
+- src/app/components/notification/*
+- src/app/pages/student-profile/*
+
+HANDS-ON 7
+- src/app/pages/course-detail/*
+- src/app/pages/not-found/*
+- src/app/components/courses-layout/*
+- src/app/features/enrollment/enrollment.module.ts
+- src/app/guards/auth.guard.ts
+- src/app/guards/unsaved-changes.guard.ts
+- src/app/app.routes.ts
+
+HANDS-ON 8
+- db.json
+- src/app/interceptors/auth.interceptor.ts
+- src/app/interceptors/error-handler.interceptor.ts
+- src/app/interceptors/loading.interceptor.ts
+- src/app/services/course.ts
+- src/app/services/enrollment.ts
+- src/app/services/loading.ts
+- src/app/app.config.ts
+
+HANDS-ON 9
+- src/app/store/course/course.actions.ts
+- src/app/store/course/course.reducer.ts
+- src/app/store/course/course.selectors.ts
+- src/app/store/course/course.effects.ts
+- src/app/store/enrollment/enrollment.actions.ts
+- src/app/store/enrollment/enrollment.reducer.ts
+- src/app/store/enrollment/enrollment.selectors.ts
+- src/app/app.config.ts
+
+HANDS-ON 10
+- src/app/components/course-card/course-card.spec.ts
+- src/app/services/course.spec.ts
+- src/app/pages/course-list/course-list.spec.ts
+- src/app/app.spec.ts
+- component/directive/pipe specs included in the project
+
+IMPORTANT
+- Do NOT copy node_modules into the submission.
+- Run: npm install
+- Start JSON Server in another terminal: npx json-server db.json --port 3000
+- Start Angular: npm start
+- Tests: npm test
+- Coverage: npm run test:coverage

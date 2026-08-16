@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --brand-blue: #0d6efd;
+  --brand-purple: #6610f2;
+  --brand-amber: #f59e0b;
+  --brand-green: #16a34a;
+  --brand-red: #dc3545;
+  --ink: #172033;
+  --muted: #6c757d;
+  --border: #e9ecef;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-card-hover: 0 10px 24px rgba(15, 23, 42, 0.10);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.12), transparent 30%),
+    radial-gradient(circle at 90% 20%, rgba(14, 165, 233, 0.10), transparent 30%),
+    #f6f8fc;
+  color: #172033;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: #6366f1;
+  color: white;
+}

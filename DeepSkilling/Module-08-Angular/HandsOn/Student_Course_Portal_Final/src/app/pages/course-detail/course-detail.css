@@ -1,0 +1,194 @@
+section {
+  padding: 40px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f8f9ff, #ffffff);
+  min-height: calc(100vh - 64px); /* Accounting for header */
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 64px; /* Header height */
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+section a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.2);
+}
+
+section a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(108, 117, 125, 0.3);
+  background: linear-gradient(135deg, #5a6268, #495057);
+}
+
+section a:active {
+  transform: translateY(-1px);
+}
+
+section p.error {
+  color: #dc3545;
+  background: linear-gradient(135deg, #f8d7da, #f1c0c3);
+  padding: 18px 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #f5c6cb;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.1);
+}
+
+section p.error::before {
+  content: '⚠';
+  font-size: 1.4rem;
+}
+
+section h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  color: #0d6efd;
+  text-align: center;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+section h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #ffd700);
+  border-radius: 2px;
+}
+
+section p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #495057;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-left: 4px solid transparent;
+}
+
+section p strong {
+  display: inline-block;
+  width: 160px;
+  color: #212529;
+  font-weight: 600;
+  background: linear-gradient(135deg, #f8f9ff, #e9ecef);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-right: 12px;
+  text-align: right;
+}
+
+section p:nth-child(even) {
+  background: linear-gradient(135deg, #f8f9ff, #e9ecef);
+  border-left-color: #0d6efd;
+}
+
+section p:nth-child(odd) {
+  background: linear-gradient(135deg, #ffffff, #f8f9ff);
+  border-left-color: #6c757d;
+}
+
+/* Reset for the first p (which is the error or back link) */
+section > p:first-child,
+section > a:first-child {
+  background: transparent;
+  padding: 0;
+  border-left: none;
+  box-shadow: none;
+}
+
+/* Enhanced hover effects */
+section p:hover {
+  transform: translateX(4px);
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Make sure the strong text doesn't take too much space on small screens */
+@media (max-width: 500px) {
+  section p strong {
+    width: 120px;
+    font-size: 1rem;
+  }
+
+  section h1 {
+    font-size: 2.2rem;
+  }
+
+  section p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  section {
+    padding: 24px 16px;
+  }
+
+  section h1 {
+    font-size: 2.2rem;
+  }
+
+  section a {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  section p {
+    padding: 14px 18px;
+    font-size: 1.1rem;
+  }
+
+  section p strong {
+    width: 130px;
+  }
+}
+
+/* Add subtle animation */
+section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

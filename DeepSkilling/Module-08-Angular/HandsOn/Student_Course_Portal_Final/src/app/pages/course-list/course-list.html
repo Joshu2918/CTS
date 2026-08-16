@@ -1,0 +1,34 @@
+<section>
+  <h1>Course Listing</h1>
+
+  <div class="search">
+    <input [(ngModel)]="searchTerm" placeholder="Search courses">
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  @if (isLoading$ | async) {
+    <p>Loading courses...</p>
+  } @else if (error$ | async; as error) {
+    <p class="error">{{ error }}</p>
+  } @else {
+    @if (courses$ | async; as courses) {
+      @if (courses.length > 0) {
+        <div class="course-grid">
+          @for (course of courses; track course.id) {
+            <app-course-card
+              [course]="course"
+              (enrollRequested)="onEnroll($event)"
+              (courseSelected)="openCourse($event)">
+            </app-course-card>
+          }
+        </div>
+
+        @if (selectedCourseId !== null) {
+          <p>Selected course ID: {{ selectedCourseId }}</p>
+        }
+      } @else {
+        <p>No courses available.</p>
+      }
+    }
+  }
+</section>

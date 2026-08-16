@@ -1,0 +1,41 @@
+<section>
+  <h1>Student Profile</h1>
+
+  <div *ngIf="!isEditMode; else editMode">
+    <div class="profile-view">
+      <p class="profile-row"><strong>Name:</strong> {{ studentName }}</p>
+      <p class="profile-row"><strong>Email:</strong> {{ studentEmail }}</p>
+      <button (click)="toggleEditMode()">Edit Profile</button>
+    </div>
+  </div>
+
+  <ng-template #editMode>
+    <div class="profile-edit">
+      <div class="form-group">
+        <label>Name:</label>
+        <input [(ngModel)]="studentName" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input [(ngModel)]="studentEmail" type="email" placeholder="Enter your email">
+      </div>
+      <div class="form-actions">
+        <button (click)="saveStudentDetails()">Save</button>
+        <button (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+  </ng-template>
+
+  <h2>Enrolled Courses</h2>
+  <div *ngIf="(enrolledCourses$ | async) as courses">
+    @if (courses.length) {
+      <ul>
+        @for (course of courses; track course.id) {
+          <li>{{ course.name }} ({{ course.code }})</li>
+        }
+      </ul>
+    } @else {
+      <p class="empty-state">No enrolled courses.</p>
+    }
+  </div>
+</section>

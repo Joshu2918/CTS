@@ -1,0 +1,18 @@
+<section>
+  <a routerLink="/courses">← Back to Courses</a>
+
+  @if (errorMessage) {
+    <p class="error">{{ errorMessage }}</p>
+  }
+
+  @if (course) {
+    <h1>{{ course.name }}</h1>
+    <p><strong>Code:</strong> {{ course.code }}</p>
+    <p><strong>Credits:</strong> {{ course.credits }}</p>
+    <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+    <p><strong>Duration:</strong> {{ course.duration }}</p>
+    <p><strong>Level:</strong> {{ course.level }}</p>
+    <p><strong>Fee:</strong> {{ course.fee | currency:'INR' }}</p>
+    <p><strong>Enrolled Students:</strong> {{ enrolledStudentIds.length }}</p>
+  }
+</section>

@@ -1,0 +1,32 @@
+<section class="home">
+  <h1>{{ portalName }}</h1>
+  <p>Welcome to the Student Course Portal.</p>
+
+  <div class="stats">
+    <div>
+      <h3>Courses Available</h3>
+      <p>{{ (courses$ | async)?.length ?? 0 }}</p>
+    </div>
+
+    <div>
+      <h3>Enrolled</h3>
+      <p>{{ (enrolledIds$ | async)?.length ?? 0 }}</p>
+    </div>
+
+    <div>
+      <h3>GPA</h3>
+      <p>{{ gpa }}</p>
+    </div>
+  </div>
+
+ <button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+  <p *ngIf="message" class="enroll-message">{{ message }}</p>
+
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses">
+  <p *ngIf="searchTerm">Searching for: {{ searchTerm }}</p>
+
+  <a routerLink="/courses">Browse Courses</a>
+
+  <app-course-summary-widget></app-course-summary-widget>
+  <app-notification></app-notification>
+</section>

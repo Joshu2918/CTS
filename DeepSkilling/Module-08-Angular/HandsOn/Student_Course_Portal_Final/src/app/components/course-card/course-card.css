@@ -1,0 +1,143 @@
+.course-card {
+  border: 1px solid #dee2e6;
+  border-left: 4px solid #0d6efd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card--enrolled {
+  box-shadow: 0 0 0 2px #16a34a33;
+  border-left-color: #16a34a;
+}
+
+.card--full {
+  border-top: 3px solid #f59e0b;
+}
+
+.expanded {
+  min-height: 300px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.actions button {
+  flex: 1 1 120px;
+  min-width: 80px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.actions button:first-child {
+  background: #0d6efd;
+  color: white;
+}
+
+.actions button:first-child:hover:not(:disabled) {
+  background: #0b5ed7;
+}
+
+.actions button:first-child:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.actions button:nth-child(2) {
+  background: #6c757d;
+  color: white;
+}
+
+.actions button:nth-child(2):hover {
+  background: #5a6268;
+}
+
+.actions button:nth-child(3) {
+  background: #dc3545;
+  color: white;
+}
+
+.actions button:nth-child(3):hover {
+  background: #c82333;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.passed {
+  background: #dcfce7;
+  color: #166534;
+}
+.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.pending {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.enrolled {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #dbeafe;
+  border-left: 3px solid #2563eb;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #1e40af;
+}
+
+.details {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.details p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.details p strong {
+  color: #495057;
+  min-width: 100px;
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .course-card {
+    padding: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

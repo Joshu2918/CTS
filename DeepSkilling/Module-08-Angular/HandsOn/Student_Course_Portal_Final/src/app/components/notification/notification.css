@@ -1,0 +1,122 @@
+.notification {
+  position: fixed;
+  top: 24px; /* Adjusted for better spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  z-index: 1000;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 300px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  animation: slideIn 0.4s ease-out, fadeOut 0.4s ease-out 3.6s forwards;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* For error notifications */
+.notification.error {
+  background: linear-gradient(135deg, #dc3545, #fd7e14);
+}
+
+/* For warning notifications */
+.notification.warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: #212529;
+}
+
+/* For info notifications */
+.notification.info {
+  background: linear-gradient(135deg, #17a2b8, #6f42c1);
+}
+
+.notification::before {
+  content: '';
+  font-size: 1.4rem;
+}
+
+.notification.success::before {
+  content: '✓';
+}
+
+.notification.error::before {
+  content: '✕';
+}
+
+.notification.warning::before {
+  content: '⚠';
+}
+
+.notification.info::before {
+  content: 'ℹ';
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+/* Hover effect to show close button (if we add one later) */
+.notification:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .notification {
+    top: 16px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    transform: none;
+    padding: 14px 18px;
+    font-size: 0.95rem;
+  }
+
+  .notification::before {
+    font-size: 1.2rem;
+  }
+}
+
+/* Add subtle pulse animation for attention */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+  100% {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+}
+
+.notification {
+  animation: slideIn 0.4s ease-out, pulse 2s infinite 0.4s, fadeOut 0.4s ease-out 3.6s forwards;
+}

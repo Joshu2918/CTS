@@ -1,0 +1,128 @@
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-radius: 16px;
+  margin: 24px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e40af;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+  border: none;
+  gap: 12px;
+  min-height: 60px;
+  transition: all 0.3s ease;
+}
+
+.summary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+}
+
+.summary:active {
+  transform: translateY(-2px);
+}
+
+.summary strong {
+  color: #0d6efd;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff, #f8f9ff);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #0d6efd, #6610f2);
+}
+
+.summary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle at bottom right, #ffd700, #ffed4e);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* Add subtle animation */
+.summary {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add course icon */
+.summary::before {
+  content: '📊';
+  font-size: 1.6rem;
+  position: absolute;
+  left: 16px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .summary {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    min-height: 50px;
+  }
+
+  .summary strong {
+    font-size: 1.3rem;
+    padding: 6px 12px;
+  }
+
+  .summary::before {
+    font-size: 1.4rem;
+    left: 12px;
+  }
+}
+
+/* Add subtle shimmer effect on hover */
+.summary:hover::after {
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.summary:hover::after {
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.5), transparent);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  animation: shimmer 3s linear infinite;
+}
