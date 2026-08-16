@@ -14,7 +14,7 @@ class Program
         con.Open();
 
         string query =
-            "INSERT INTO Employees VALUES(101, 'Pramod', 60000)";
+            "INSERT INTO Employees VALUES(101, 'Joshu', 60000)";
 
         SqlCommand cmd =
             new SqlCommand(query, con);
@@ -26,3 +26,4 @@ class Program
         con.Close();
     }
 }
+

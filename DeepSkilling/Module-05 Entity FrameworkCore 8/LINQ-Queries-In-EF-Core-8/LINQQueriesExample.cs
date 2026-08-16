@@ -25,7 +25,7 @@ namespace LINQQueriesDemo
         {
             List<Student> students = new List<Student>
             {
-                new Student{StudentId=1,Name="Pramod",Age=22},
+                new Student{StudentId=1,Name="Joshu",Age=22},
                 new Student{StudentId=2,Name="Rahul",Age=20},
                 new Student{StudentId=3,Name="Anjali",Age=24}
             };

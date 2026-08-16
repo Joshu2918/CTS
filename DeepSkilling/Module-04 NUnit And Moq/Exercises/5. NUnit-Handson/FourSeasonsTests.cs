@@ -31,7 +31,7 @@ namespace CollectionsLib.Tests
         {
             return new List<Employee>
             {
-                new Employee{Id=100,Name="Pramod"},
+                new Employee{Id=100,Name="Joshu"},
                 new Employee{Id=101,Name="Rahul"},
                 new Employee{Id=102,Name="Kiran"}
             };
@@ -41,7 +41,7 @@ namespace CollectionsLib.Tests
         {
             return new List<Employee>
             {
-                new Employee{Id=100,Name="Pramod"},
+                new Employee{Id=100,Name="Joshu"},
                 new Employee{Id=101,Name="Rahul"},
                 new Employee{Id=102,Name="Kiran"}
             };

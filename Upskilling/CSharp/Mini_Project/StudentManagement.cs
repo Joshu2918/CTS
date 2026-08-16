@@ -16,7 +16,7 @@ class Program
             new Student
             {
                 Id = 101,
-                Name = "Pramod"
+                Name = "Joshu"
             },
             new Student
             {
@@ -31,3 +31,4 @@ class Program
         }
     }
 }
+

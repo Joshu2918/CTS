@@ -46,7 +46,7 @@ public class MVCDemo {
     public static void main(String[] args) {
 
         Student model =
-                new Student("Pramod");
+                new Student("Joshu");
 
         StudentView view =
                 new StudentView();

@@ -6,7 +6,7 @@ Employee Inserted Successfully.
 
 | EmployeeID | FirstName | LastName | DepartmentID | Salary |
 |------------|-----------|----------|--------------|--------|
-| 1 | Pramod | Munaganuri | 3 | 6500.00 |
+| 1 | Joshu | Joshu | 3 | 6500.00 |
 
 ## Observation
 

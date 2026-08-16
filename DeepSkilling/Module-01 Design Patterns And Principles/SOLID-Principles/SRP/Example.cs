@@ -40,7 +40,7 @@ public class SRPDemo {
     public static void main(String[] args) {
 
         Student student =
-                new Student("Pramod", 88);
+                new Student("Joshu", 88);
 
         GradeCalculator calculator =
                 new GradeCalculator();

@@ -13,7 +13,7 @@ namespace MicroserviceSecurityDemo.Controllers
         {
             return Ok(new[]
             {
-                new { Id = 1, Name = "Pramod", Department = "IT" },
+                new { Id = 1, Name = "Joshu", Department = "IT" },
                 new { Id = 2, Name = "Rahul", Department = "HR" }
             });
         }

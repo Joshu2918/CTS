@@ -54,7 +54,7 @@ public class ObserverDemo {
                 new Channel();
 
         channel.subscribe(
-                new User("Pramod"));
+                new User("Joshu"));
 
         channel.subscribe(
                 new User("Rahul"));

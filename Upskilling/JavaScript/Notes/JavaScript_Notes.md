@@ -3,7 +3,7 @@
 ## Variables
 
 ```javascript
-let name = "Pramod";
+let name = "Joshu";
 const age = 22;
 ```
 
@@ -54,3 +54,4 @@ Always handle failed responses and network errors when calling an API.
 ## ES6 Basics
 
 Modern JavaScript includes template literals, destructuring, arrow functions, modules, and promises.
+

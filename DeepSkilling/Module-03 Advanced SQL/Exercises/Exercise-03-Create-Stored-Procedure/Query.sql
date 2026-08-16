@@ -14,8 +14,8 @@ INSERT INTO Employees
 VALUES
 (
     1,
-    'Pramod',
-    'Munaganuri',
+    'Joshu',
+    'Joshu',
     3,
     6500,
     '2026-06-18'

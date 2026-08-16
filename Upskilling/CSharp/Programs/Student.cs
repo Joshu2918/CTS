@@ -14,8 +14,9 @@ class Student
     static void Main()
     {
         Student student = new Student();
-        student.Name = "Pramod";
+        student.Name = "Joshu";
         student.Age = 22;
         student.Display();
     }
 }
+

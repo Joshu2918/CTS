@@ -28,7 +28,7 @@ ON DUPLICATE KEY UPDATE
 
 INSERT INTO Employees (emp_id, emp_name, department, salary)
 VALUES
-    (101, 'Pramod', 'IT', 60000),
+    (101, 'Joshu', 'IT', 60000),
     (102, 'Rahul', 'HR', 45000),
     (103, 'Anil', 'IT', 70000)
 ON DUPLICATE KEY UPDATE
@@ -60,3 +60,4 @@ SELECT
 FROM Employees
 GROUP BY department
 ORDER BY department;
+

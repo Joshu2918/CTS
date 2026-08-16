@@ -28,7 +28,7 @@ namespace EFCoreCRUDDemo
                 new Student
                 {
                     StudentId = 1,
-                    Name = "Pramod"
+                    Name = "Joshu"
                 });
 
             Console.WriteLine("Student Added");
@@ -41,7 +41,7 @@ namespace EFCoreCRUDDemo
             }
 
             // UPDATE
-            students[0].Name = "Pramod Kumar";
+            students[0].Name = "Joshu";
 
             Console.WriteLine(
                 "Student Updated");
@@ -54,3 +54,4 @@ namespace EFCoreCRUDDemo
         }
     }
 }
+

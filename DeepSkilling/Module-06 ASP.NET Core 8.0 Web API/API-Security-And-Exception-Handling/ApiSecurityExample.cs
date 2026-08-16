@@ -11,7 +11,7 @@ namespace ApiSecurityDemo.Controllers
         {
             return Ok(new[]
             {
-                new { Id = 1, Name = "Pramod" },
+                new { Id = 1, Name = "Joshu" },
                 new { Id = 2, Name = "Rahul" }
             });
         }
