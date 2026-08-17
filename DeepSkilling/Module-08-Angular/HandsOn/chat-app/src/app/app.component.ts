@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, effect, signal, inject } from '@angular/core';
+import { RouterOutlet, Router } from '@angular/router';
 
 type Theme = 'light' | 'dark';
 
@@ -13,6 +13,7 @@ type Theme = 'light' | 'dark';
 })
 export class AppComponent {
   readonly theme = signal<Theme>('dark');
+  private readonly router = inject(Router);
 
   constructor() {
     effect(() => document.documentElement.setAttribute('data-theme', this.theme()));
@@ -20,5 +21,9 @@ export class AppComponent {
 
   toggleTheme(): void {
     this.theme.update((value) => (value === 'dark' ? 'light' : 'dark'));
+  }
+
+  openSearch(): void {
+    this.router.navigate(['/search']);
   }
 }

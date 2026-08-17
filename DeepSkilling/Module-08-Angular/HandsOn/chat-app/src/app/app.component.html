@@ -1,4 +1,7 @@
 <div class="app-shell">
-  <button class="theme-button" type="button" (click)="toggleTheme()">Toggle theme</button>
+  <div class="app-header">
+    <button class="theme-button" type="button" (click)="toggleTheme()">Toggle theme</button>
+    <button class="search-button" type="button" (click)="openSearch()">Search messages</button>
+  </div>
   <router-outlet />
 </div>

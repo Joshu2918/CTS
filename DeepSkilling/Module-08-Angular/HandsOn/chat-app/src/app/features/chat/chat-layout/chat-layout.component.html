@@ -8,16 +8,45 @@
     </div>
 
     <div class="search-box">
-      <input [formControl]="searchControl" type="search" placeholder="Search rooms..." />
+      <input
+        [formControl]="searchControl"
+        type="search"
+        placeholder="Search rooms..."
+        (focus)="isSearchFocused.set(true)"
+        (blur)="isSearchFocused.set(false)"
+        [class.focused]="isSearchFocused()"
+      />
     </div>
 
     <nav class="room-list" aria-label="Chat rooms">
       <p class="section-label">Rooms</p>
       @for (room of filteredRooms; track room.id) {
-        <a class="room-item" [routerLink]="['/chat', room.id]" routerLinkActive="active">
-          <span class="hash">#</span>
-          <span class="room-name">{{ room.name }}</span>
-        </a>
+        <div class="room-item-container" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+          <a
+            class="room-item"
+            [routerLink]="['/chat', room.id]"
+            [class.is-user-in-room]="isUserInRoom(room.id)"
+            [title]="getPresenceTooltip(room.id)"
+          >
+            <div class="room-item-content">
+              <span class="hash">#</span>
+              <span class="room-name">{{ room.name }}</span>
+            </div>
+            <div class="room-item-meta">
+              <span class="room-user-count" [class.has-users]="getOnlineUsersCount(room.id) > 0">
+                {{ getOnlineUsersCount(room.id) }}
+                <span class="user-dot" [class.online]="getOnlineUsersCount(room.id) > 0"></span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Room description on hover -->
+          @if (isUserInRoom(room.id)) {
+            <div class="room-description tooltip">
+              {{ room.description }}
+            </div>
+          }
+        </div>
       } @empty {
         <p class="empty">No rooms found.</p>
       }
@@ -25,13 +54,21 @@
 
     <div class="sidebar-footer">
       @if (currentUser(); as user) {
-        <div class="avatar">{{ user.avatar }}</div>
-        <div class="user-meta">
-          <span class="user-name">{{ user.name }}</span>
-          <span class="user-status">online</span>
+        <div class="user-profile">
+          <div class="avatar">{{ user.avatar }}</div>
+          <div class="user-meta">
+            <span class="user-name">{{ user.name }}</span>
+            <div class="user-status-indicator">
+              <span class="status-dot online"></span>
+              <span class="status-text">online</span>
+            </div>
+          </div>
         </div>
       }
-      <button class="icon-btn" type="button" (click)="logout()">Logout</button>
+      <button class="icon-btn" type="button" (click)="logout()"
+              [class.hover-effect]>
+        Logout
+      </button>
     </div>
   </aside>
 

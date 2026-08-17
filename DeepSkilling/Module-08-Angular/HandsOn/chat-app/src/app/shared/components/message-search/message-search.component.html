@@ -1,0 +1,75 @@
+<div class="search-container">
+  <div class="search-header">
+    <h2>Search Messages</h2>
+    <button class="btn-close" (click)="clearSearch()" aria-label="Close search">
+      ×
+    </button>
+  </div>
+
+  <div class="search-input-group">
+    <input
+      type="text"
+      [formControl]="searchControl"
+      placeholder="Search messages by content, sender, or room..."
+      aria-label="Search messages"
+      [class.searching]="isSearching()"
+    />
+    <button
+      type="button"
+      class="btn-clear"
+      (click)="clearSearch()"
+      [hidden]="!searchControl.value || searchControl.value.trim() === ''"
+      aria-label="Clear search"
+    >
+      ×
+    </button>
+  </div>
+
+  @if (isSearching()) {
+    <div class="search-loading">
+      <div class="loading-spinner"></div>
+      <span>Searching...</span>
+    </div>
+  } @else {
+    @if (searchResults().length === 0 && searchControl.value && searchControl.value.trim() !== '') {
+      <div class="search-empty">
+        <p>No messages found for "{{ searchControl.value }}"</p>
+        <p>Try different keywords or check your spelling.</p>
+      </div>
+    } @else {
+      @if (searchResults().length > 0) {
+        <div class="search-results-count">
+          {{ searchResults().length }} result{{ searchResults().length !== 1 ? 's' : '' }}
+        </div>
+
+        <div class="search-results-list">
+          @for (result of searchResults(); track result.message.id) {
+            <div class="search-result-item" (click)="navigateToMessage(result)">
+              <div class="search-result-content">
+                <div class="search-result-sender">
+                  <strong>{{ result.message.senderName }}</strong>
+                </div>
+                <div class="search-result-room">
+                  #general
+                </div>
+                <div class="search-result-preview">
+                  {{ highlightText(result.message.text, result.highlights.content ? (searchControl.value || '') : '') }}
+                </div>
+                <div class="search-result-timestamp">
+                  {{ getRelativeTime(result.message.createdAt) }}
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      } @else {
+        @if (!searchControl.value || searchControl.value.trim() === '') {
+          <div class="search-placeholder">
+            <p>Start typing to search messages across all rooms</p>
+            <p class="search-hint">Search by message content, sender name, or room name</p>
+          </div>
+        }
+      }
+    }
+  }
+</div>

@@ -1,2 +1,63 @@
-:host { display:block; min-height:100%; }
-.theme-button { position:fixed; right:12px; top:12px; z-index:20; border:1px solid var(--color-border); border-radius:8px; padding:7px 10px; background:var(--color-bg-elevated); color:var(--color-text-primary); }
+:host {
+  display:block;
+  min-height:100%;
+  position: relative;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+}
+
+.theme-button,
+.search-button {
+  position:relative;
+  border:1px solid var(--color-border);
+  border-radius:8px;
+  padding:7px 12px;
+  background:var(--color-bg-elevated);
+  color:var(--color-text-primary);
+  font-size:0.9rem;
+  cursor:pointer;
+  transition:var(--transition-normal);
+  display:flex;
+  align-items:center;
+  gap:6px;
+  white-space:nowrap;
+}
+
+.theme-button:hover,
+.search-button:hover {
+  background:var(--color-bg);
+  border-color:var(--color-border-light);
+  color:var(--color-text-primary);
+}
+
+.theme-button:active,
+.search-button:active {
+  transform:translateY(1px);
+}
+
+.theme-button {
+  right:auto;
+  top:auto;
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 12px 16px;
+  }
+
+  .theme-button,
+  .search-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

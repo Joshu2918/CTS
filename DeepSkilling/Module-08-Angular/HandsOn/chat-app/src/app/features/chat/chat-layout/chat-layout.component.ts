@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { debounceTime, distinctUntilChanged, startWith } from 'rxjs';
@@ -22,6 +22,14 @@ export class ChatLayoutComponent {
   readonly rooms = MOCK_ROOMS;
   filteredRooms = MOCK_ROOMS;
 
+  // Presence indicators for users in rooms
+  readonly roomPresence = new Map<string, Set<string>>([
+    ['general', new Set(['Alice', 'Bob', 'Charlie'])],
+    ['angular', new Set(['David', 'Eve', 'Frank'])]
+  ]);
+
+  readonly isSearchFocused = signal(false);
+
   constructor() {
     this.searchControl.valueChanges
       .pipe(startWith(''), debounceTime(250), distinctUntilChanged())
@@ -34,5 +42,25 @@ export class ChatLayoutComponent {
   logout(): void {
     this.auth.logout();
     this.router.navigateByUrl('/login');
+  }
+
+  // Get online users count for a room
+  getOnlineUsersCount(roomId: string): number {
+    return this.roomPresence.get(roomId)?.size || 0;
+  }
+
+  // Check if current user is in room
+  isUserInRoom(roomId: string): boolean {
+    const user = this.currentUser();
+    if (!user) return false;
+    return this.roomPresence.get(roomId)?.has(user.name) || false;
+  }
+
+  // Get presence tooltip text
+  getPresenceTooltip(roomId: string): string {
+    const users = this.roomPresence.get(roomId);
+    if (!users || users.size === 0) return 'No one online';
+    if (users.size === 1) return `${Array.from(users)[0]} is online`;
+    return `${users.size} people online`;
   }
 }

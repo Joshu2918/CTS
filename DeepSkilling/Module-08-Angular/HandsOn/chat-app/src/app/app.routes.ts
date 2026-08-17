@@ -15,5 +15,9 @@ export const routes: Routes = [
       { path: ':roomId', loadComponent: () => import('./features/chat/chat-window/chat-window.component').then((m) => m.ChatWindowComponent) },
     ],
   },
+  {
+    path: 'search',
+    loadComponent: () => import('./features/search/search-page.component').then((m) => m.SearchPageComponent),
+  },
   { path: '**', loadComponent: () => import('./features/not-found/not-found.component').then((m) => m.NotFoundComponent) },
 ];

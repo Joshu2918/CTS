@@ -4,6 +4,15 @@ import { ChatMessage } from '../models/message.model';
 import { AuthService } from './auth.service';
 import { ChatApiService } from './chat-api.service';
 
+export interface SearchResult {
+  message: ChatMessage;
+  highlights: {
+    content: boolean;
+    sender: boolean;
+    room: boolean;
+  };
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +22,7 @@ export class ChatService {
   private readonly api = inject(ChatApiService);
 
   private readonly incomingMessage$ = new Subject<ChatMessage>();
+  readonly messagesUpdated$ = new Subject<void>();
 
   private readonly _messages = signal<ChatMessage[]>([]);
 
@@ -20,20 +30,57 @@ export class ChatService {
 
   readonly messageCount = computed(() => this._messages().length);
 
-  constructor() {
+  // Search state
+  private readonly searchTerms = signal<string>('');
+  readonly searchResults = computed<SearchResult[]>(() => {
+    const term = this.searchTerms().toLowerCase().trim();
+    if (!term) return [];
 
+    return this._messages()
+      .filter(message => {
+        const contentMatch = message.text.toLowerCase().includes(term);
+        const senderMatch = message.senderName.toLowerCase().includes(term);
+        // For room matching, we'd need to look up the room name - simplified for now
+        const roomMatch = false; // Will implement room lookup if needed
+
+        return contentMatch || senderMatch || roomMatch;
+      })
+      .map(message => ({
+        message,
+        highlights: {
+          content: message.text.toLowerCase().includes(term),
+          sender: message.senderName.toLowerCase().includes(term),
+          room: false // Simplified
+        }
+      }));
+  });
+
+  constructor() {
     // Load initial messages from API
     this.loadMessages();
 
     // RxJS real-time stream
     this.incomingMessage$.subscribe((message) => {
-
       this._messages.update((messages) => [
         ...messages,
         message
       ]);
-
+      // Notify that messages have been updated
+      this.messagesUpdated$.next();
     });
+  }
+
+  // Search methods
+  setSearchTerm(term: string): void {
+    this.searchTerms.set(term);
+  }
+
+  getSearchResults(): SearchResult[] {
+    return this.searchResults();
+  }
+
+  clearSearch(): void {
+    this.searchTerms.set('');
   }
 
   private loadMessages(): void {
