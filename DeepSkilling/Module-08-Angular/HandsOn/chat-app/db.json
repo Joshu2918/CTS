@@ -1,0 +1,32 @@
+{
+  "messages": [
+    {
+      "id": "1",
+      "roomId": "general",
+      "sender": "Ravi",
+      "text": "Hello everyone!",
+      "time": "10:00 AM"
+    },
+    {
+      "id": "2",
+      "roomId": "general",
+      "sender": "Hanish",
+      "text": "Welcome to ChatFlow!",
+      "time": "10:05 AM"
+    },
+    {
+      "id": "3",
+      "roomId": "angular",
+      "sender": "Rohith",
+      "text": "Angular is awesome!",
+      "time": "10:10 AM"
+    },
+    {
+      "id": "4",
+      "roomId": "angular",
+      "sender": "Ravi",
+      "text": "Learning Angular with ChatFlow.",
+      "time": "10:15 AM"
+    }
+  ]
+}

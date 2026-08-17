@@ -1,0 +1,45 @@
+@if (room(); as currentRoom) {
+  <header class="room-header">
+    <div>
+      <h2># {{ currentRoom.name }}</h2>
+      <p>{{ currentRoom.description }}</p>
+    </div>
+    <span>{{ roomMessages().length }} messages</span>
+  </header>
+
+  <section class="messages" aria-live="polite">
+    @for (message of roomMessages(); track message.id) {
+      <article class="message">
+        <div class="avatar small">{{ message.senderName.slice(0, 2).toUpperCase() }}</div>
+        <div>
+          <div class="message-meta">
+            <strong>{{ message.senderName }}</strong>
+            <span>{{ message.createdAt | date:'shortTime' }}</span>
+          </div>
+          <p>{{ message.text }}</p>
+        </div>
+      </article>
+    } @empty {
+      <div class="empty-chat">No messages yet. Start the conversation.</div>
+    }
+  </section>
+
+  <form class="composer" (ngSubmit)="send()">
+    <textarea
+      [formControl]="messageControl"
+      rows="2"
+      placeholder="Type a message..."
+      (keydown)="onKeydown($event)"
+    ></textarea>
+    <div class="composer-bottom">
+      @if (messageControl.invalid && messageControl.touched) {
+        <small>Message is required and must be 250 characters or less.</small>
+      } @else {
+        <small>Enter to send · Shift + Enter for a new line</small>
+      }
+      <button type="submit">Send</button>
+    </div>
+  </form>
+} @else {
+  <div class="empty-chat">Room not found.</div>
+}

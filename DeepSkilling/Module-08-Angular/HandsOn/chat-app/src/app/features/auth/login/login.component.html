@@ -1,0 +1,28 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="brand">
+      <div class="brand-mark">CF</div>
+      <h1>ChatFlow</h1>
+      <p class="tagline">Real-time messaging, built with Angular Signals &amp; RxJS.</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <label for="name">Your name</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="e.g. Joshith"
+        autocomplete="name"
+        [attr.aria-invalid]="nameControl.invalid && nameControl.touched"
+      />
+      @if (nameControl.invalid && nameControl.touched) {
+        <p class="error" role="alert">Enter at least 2 characters.</p>
+      }
+
+      <button type="submit" class="primary-btn">Enter chat</button>
+    </form>
+
+    <p class="hint">No password needed — this is a simulated login for demo purposes.</p>
+  </div>
+</div>

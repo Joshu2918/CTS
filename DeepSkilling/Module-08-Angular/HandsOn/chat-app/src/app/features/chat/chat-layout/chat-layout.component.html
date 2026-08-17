@@ -1,0 +1,41 @@
+<div class="shell">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-mark">CF</span>
+        <span class="logo-text">ChatFlow Mini</span>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <input [formControl]="searchControl" type="search" placeholder="Search rooms..." />
+    </div>
+
+    <nav class="room-list" aria-label="Chat rooms">
+      <p class="section-label">Rooms</p>
+      @for (room of filteredRooms; track room.id) {
+        <a class="room-item" [routerLink]="['/chat', room.id]" routerLinkActive="active">
+          <span class="hash">#</span>
+          <span class="room-name">{{ room.name }}</span>
+        </a>
+      } @empty {
+        <p class="empty">No rooms found.</p>
+      }
+    </nav>
+
+    <div class="sidebar-footer">
+      @if (currentUser(); as user) {
+        <div class="avatar">{{ user.avatar }}</div>
+        <div class="user-meta">
+          <span class="user-name">{{ user.name }}</span>
+          <span class="user-status">online</span>
+        </div>
+      }
+      <button class="icon-btn" type="button" (click)="logout()">Logout</button>
+    </div>
+  </aside>
+
+  <main class="chat-area">
+    <router-outlet />
+  </main>
+</div>
